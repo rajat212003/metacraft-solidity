@@ -9,16 +9,16 @@ contract MyToken {
     uint public total_supply = 0;
 
     // mapping variable here
-    mapping(_address => uint) public balance;
+    mapping(address => uint) public balance;
 
     // mint function
-    function mint(_address _addr, uint _value) public {
+    function mint(address _addr, uint _value) public {
         total_supply += _value;
         balance[_addr] += _value;
     }
 
     // burn function
-    function burn(_address _addr, uint _value) public {
+    function burn(address _addr, uint _value) public {
         if(balance[_addr] >= _value) {
             total_supply -= _value;
             balance[_addr] -= _value;
